@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public class MyLinkedList {
+public class MyLinkedList implements Iterable<Node> {
     private Node head;
     private Node tail;
 
@@ -34,4 +34,8 @@ public class MyLinkedList {
     }
 
 
+    @Override
+    public Iterator<Node> iterator() {
+        return new MyLinkedListIterator(head);
+    }
 }

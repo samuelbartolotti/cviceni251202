@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,5 +12,19 @@ public class Main {
         System.out.println("pepa");
         System.out.println(list);
 
+        for (Node n : list){
+            System.out.println(n);
+        }
+
+        ArrayList<String> i = new ArrayList<>();
+        i.add("A");
+        i.add("A");
+        i.add("A");
+        i.add("A");
+        i.add("A");
+        Iterator<String> it = i.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 }
