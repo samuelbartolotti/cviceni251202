@@ -3,6 +3,7 @@ import java.util.Iterator;
 public class MyLinkedList implements Iterable<Node> {
     private Node head;
     private Node tail;
+    private int iteratorChoice;
 
     public MyLinkedList() {
         head = null;
@@ -36,6 +37,13 @@ public class MyLinkedList implements Iterable<Node> {
 
     @Override
     public Iterator<Node> iterator() {
-        return new MyLinkedListIterator(head);
+        if (this.iteratorChoice == 1) {
+            return new MyLinkedListIterator(head);
+        } else if (this.iteratorChoice == 2) {
+            return new MyLinkedListIteratorReverse(tail);
+        } else if (this.iteratorChoice == 3) {
+            return new MyLinkedListEveryEven(head);
+        }
+        return null;
     }
 }
